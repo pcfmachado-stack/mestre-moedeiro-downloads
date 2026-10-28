@@ -1,5 +1,8 @@
 name: Publicar imagem de downloads
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 permissions:
   contents: read
