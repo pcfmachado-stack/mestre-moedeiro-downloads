@@ -1,0 +1,10 @@
+MESTRE MOEDEIRO - DOWNLOADS (projeto independente)
+
+1. Criar repositório privado pc fm achado-stack/mestre-moedeiro-downloads (organização correta: pcfmachado-stack).
+2. Enviar conteúdo desta pasta para a raiz do repositório.
+3. Executar GitHub Actions > Publicar imagem de downloads > Run workflow.
+4. NÃO implantar stack.yml ainda: o serviço antigo usa o mesmo domínio e pode provocar roteamento ambíguo.
+5. Antes de migrar, validar imagem e combinar retirada do router antigo e implantação do novo.
+6. Volume externo existente: mestre_moedeiro_distribuicao_mm_downloads_data montado em /data:ro.
+7. O arquivo site/versao.json deste repositório é apenas legado; o endpoint público /versao.json lê /data/site/versao.json.
+8. O admin antigo não faz parte deste projeto; uploads.mundonumista.com.br é independente.

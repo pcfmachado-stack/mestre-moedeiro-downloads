@@ -1,0 +1,10 @@
+ATUALIZAÇÃO DA CENTRAL DE DOWNLOADS — GUIA DE INSTALAÇÃO
+
+1. Faça backup do index.html atualmente publicado.
+2. Envie o index.html deste pacote para a RAIZ do subdomínio, substituindo o atual.
+3. Envie tutoriais/instalacao.html para a pasta tutoriais/ do subdomínio.
+4. NÃO substitua versao.json, nem altere arquivos/ ou imagens/.
+5. Teste https://downloads.mundonumista.com.br/tutoriais/instalacao.html
+6. Na página inicial, teste o link Guia de instalação e o botão de download.
+
+Este guia é textual. Imagens do instalador e da ativação podem ser incorporadas posteriormente, quando fornecidas.

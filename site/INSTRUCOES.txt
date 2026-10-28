@@ -1,0 +1,10 @@
+CENTRAL DE DOWNLOADS — PRÉVIA PARA WHATSAPP
+
+1. Faça backup do index.html atual no servidor.
+2. Substitua SOMENTE o index.html na raiz do subdomínio.
+3. Envie imagens/compartilhar_mestre_moedeiro.jpg para a pasta imagens/ do servidor.
+4. NÃO altere versao.json, arquivos/ nem o instalador.
+5. Abra https://downloads.mundonumista.com.br/imagens/compartilhar_mestre_moedeiro.jpg no navegador para confirmar que a imagem é pública.
+6. Compartilhe https://downloads.mundonumista.com.br/ pelo WhatsApp.
+
+A miniatura pode demorar a atualizar por causa do cache do WhatsApp. Se não aparecer, confira se a URL da imagem abre sem login, se o servidor permite acesso de robôs e se as tags OG aparecem no código-fonte da página.
