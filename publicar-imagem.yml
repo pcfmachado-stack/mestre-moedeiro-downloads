@@ -1,0 +1,31 @@
+name: Publicar imagem de downloads
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+  packages: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validar arquivos essenciais
+        run: |
+          test -s site/index.html
+          test -s nginx.conf
+          test -s Dockerfile
+          grep -q 'alias /data/site/versao.json;' nginx.conf
+          grep -q 'alias /data/site/arquivos/;' nginx.conf
+          ! grep -q 'proxy_pass' nginx.conf
+          ! grep -q '/usr/share/nginx/html:ro' stack.yml
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./Dockerfile
+          push: true
+          tags: ghcr.io/pcfmachado-stack/mestre-moedeiro-downloads:0.2.0-beta
