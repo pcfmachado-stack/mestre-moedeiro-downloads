@@ -1,0 +1,15 @@
+MESTRE MOEDEIRO DOWNLOADS - 0.2.1-beta
+
+ALTERACOES
+- nginx.conf: nova rota /comunicacao/ apontando para /data/site/comunicacao/.
+- .github/workflows/publicar-imagem.yml: tag da imagem 0.2.1-beta e verificacao da nova rota.
+- Nao alterados: Dockerfile, site, stack.yml e rotas existentes de instaladores e versao.json.
+
+IMPLANTACAO CONTROLADA
+1. Publicar o codigo no repositorio GitHub de downloads.
+2. Confirmar sucesso do workflow e existencia da imagem 0.2.1-beta no GHCR.
+3. No Portainer, na stack mestre_moedeiro_downloads, alterar APENAS a imagem de 0.2.0-beta para 0.2.1-beta.
+4. Testar https://downloads.mundonumista.com.br/comunicacao/banners.json e URL da imagem.
+5. Se houver problema, retornar a tag 0.2.0-beta.
+
+ATENCAO: Este ZIP nao altera o servidor automaticamente.
