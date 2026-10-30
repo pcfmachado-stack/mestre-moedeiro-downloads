@@ -1,9 +1,10 @@
 name: Publicar imagem de downloads
 
 on:
+  pull_request:
+    branches: [main]
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -12,10 +13,10 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Validar arquivos essenciais
         run: |
@@ -29,15 +30,24 @@ jobs:
           ! grep -q 'proxy_pass' nginx.conf
           ! grep -q '/usr/share/nginx/html:ro' stack.yml
 
+      - name: Verificar textos da pagina (ativacao por WhatsApp)
+        run: |
+          ! grep -qi 'Ative por e-mail' site/index.html
+          ! grep -qi 'Informe seu e-mail' site/tutoriais/instalacao.html
+      # Em pull requests apenas valida; a imagem so e publicada no main.
       - uses: docker/login-action@v3
+        if: github.event_name != 'pull_request'
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - uses: docker/build-push-action@v6
+        if: github.event_name != 'pull_request'
         with:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/pcfmachado-stack/mestre-moedeiro-downloads:0.2.2-beta
+          tags: |
+            ghcr.io/pcfmachado-stack/mestre-moedeiro-downloads:0.2.3-beta
+            ghcr.io/pcfmachado-stack/mestre-moedeiro-downloads:sha-${{ github.sha }}
