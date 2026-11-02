@@ -15,3 +15,5 @@ Documentação central e regras do projeto: repositório
 - Domínios (Traefik, 01/11/2026): `downloads.mundonumista.com.br` (gravado no Desktop 4.1.15 — nunca
   remover), `mestremoedeiro.com.br` e `www.mestremoedeiro.com.br` (página pública do produto).
 - `stack.yml` espelha o Portainer em 01/11/2026 (sem segredos); a configuração real está no Portainer.
+- Home do projeto (02/11/2026): `site/inicio.html`, aberta em `/` só nos domínios mestremoedeiro.com.br e www
+  (`map $host` no nginx.conf). `downloads.mundonumista.com.br/` continua sendo a página do Windows (`index.html`).
