@@ -15,7 +15,8 @@
 <meta property="og:image" content="https://mestremoedeiro.com.br/imagens/compartilhar_mestre_moedeiro.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#143c30">
-<link rel="icon" href="imagens/logo_mestre_moedeiro.png">
+<link rel="icon" type="image/png" href="imagens/marca_mundo_numista_64.png">
+<link rel="apple-touch-icon" href="imagens/marca_mundo_numista_180.png">
 <style>
 :root{--verde:#143c30;--verde2:#1b6a4d;--verde3:#2f7d58;--ouro:#e8c572;--ouro2:#c9a24b;--creme:#f7f4ea;--pergaminho:#f1ece0;--borda:#ddd3bd;--texto:#1f2a24;--suave:#52665d;--serif:Georgia,'Times New Roman',serif}
 *{box-sizing:border-box}
@@ -28,7 +29,7 @@ a{color:var(--verde2)}
 .topo{background:var(--verde);color:#fff;position:sticky;top:0;z-index:10}
 .topo .caixa{display:flex;align-items:center;gap:22px;min-height:64px}
 .marca{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none}
-.marca img{width:38px;height:38px;border-radius:50%;border:1px solid var(--ouro)}
+.marca img{width:46px;height:46px;border-radius:50%;border:1px solid rgba(232,197,114,.6)}
 .marca strong{font-family:var(--serif);font-size:20px;letter-spacing:.3px}
 .topo nav{display:flex;gap:18px;margin-left:auto}
 .topo nav a{color:#e9f1ec;text-decoration:none;font-size:14px}
@@ -107,12 +108,15 @@ section{padding:72px 0}
 /* faixa final */
 .final{background:var(--verde);color:#fff;text-align:center}
 .final .titulo{color:#fff}
+.final .selo-marca{display:block;margin:0 auto 18px;border-radius:50%;border:2px solid rgba(232,197,114,.55)}
 .final p{color:#d6e3da;font-size:18px;margin:0 0 28px}
 .final .botao.grande{box-shadow:4px 4px 0 #0e2a21}
 .endereco{display:block;margin-top:14px;color:var(--ouro);font-size:15px;letter-spacing:.3px}
 footer{background:#0e2a21;color:#9fb8aa;font-size:14px;padding:28px 0}
 footer .caixa{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
 footer a{color:#d6e3da}
+.rodape-marca{display:inline-flex;align-items:center;gap:12px}
+.rodape-marca img{border-radius:50%}
 @media (max-width:900px){
   .topo nav{display:none}
   .hero .caixa,.historia .grade{grid-template-columns:1fr}
@@ -132,7 +136,7 @@ footer a{color:#d6e3da}
 
 <header class="topo">
   <div class="caixa">
-    <a class="marca" href="#inicio"><img src="imagens/logo_mestre_moedeiro.png" alt=""><strong>Mestre Moedeiro</strong></a>
+    <a class="marca" href="#inicio"><img src="imagens/marca_mundo_numista_256.webp" alt="Mundo Numista" width="46" height="46"><strong>Mestre Moedeiro</strong></a>
     <nav aria-label="Seções da página">
       <a href="#recursos">O que faz</a>
       <a href="#historia">História</a>
@@ -292,6 +296,7 @@ footer a{color:#d6e3da}
 
 <section class="final">
   <div class="caixa">
+    <img class="selo-marca" src="imagens/marca_mundo_numista_256.webp" alt="Mundo Numista" width="120" height="120">
     <h2 class="titulo">Sua coleção, organizada a partir de hoje</h2>
     <p>Grátis, sem instalar nada e com o seu celular.</p>
     <a class="botao grande" href="https://app.mestremoedeiro.com.br">Abrir o Mestre Moedeiro <span aria-hidden="true">→</span></a>
@@ -302,7 +307,7 @@ footer a{color:#d6e3da}
 
 <footer>
   <div class="caixa">
-    <span>Mestre Moedeiro é um projeto gratuito da <a href="https://mundonumista.com.br">Mundo Numista®</a> · © 2026</span>
+    <span class="rodape-marca"><img src="imagens/marca_mundo_numista_256.webp" alt="" width="40" height="40"><span>Mestre Moedeiro é um projeto gratuito da <a href="https://mundonumista.com.br">Mundo Numista®</a> · © 2026</span></span>
     <span><a href="https://app.mestremoedeiro.com.br">Entrar</a> · <a href="https://downloads.mundonumista.com.br/">Programa para Windows</a></span>
   </div>
 </footer>
