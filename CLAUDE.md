@@ -12,4 +12,6 @@ Documentação central e regras do projeto: repositório
   4.1.8; orientação sobre o aviso do Windows/Chrome).
 - Imagem: a cada push no `main`, tags `<versão>` e `sha-<commit>`; em PRs o
   workflow só valida. Mudou a página? Atualize o serviço `mm-downloads-web`.
-- `stack.yml` é histórico; a configuração real está no Portainer.
+- Domínios (Traefik, 01/11/2026): `downloads.mundonumista.com.br` (gravado no Desktop 4.1.15 — nunca
+  remover), `mestremoedeiro.com.br` e `www.mestremoedeiro.com.br` (página pública do produto).
+- `stack.yml` espelha o Portainer em 01/11/2026 (sem segredos); a configuração real está no Portainer.
