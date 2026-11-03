@@ -76,11 +76,25 @@ a{color:var(--verde2)}
 section{padding:72px 0}
 .titulo{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);color:var(--verde);margin:0 0 10px;line-height:1.15}
 .sub{font-size:18px;color:var(--suave);max-width:760px;margin:0 0 36px}
-.aulas{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;counter-reset:a}
+.modulo{margin-top:30px}
+.modulo-cabeca{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;border-bottom:2px solid var(--ouro2);padding-bottom:8px;margin-bottom:14px}
+.modulo-cabeca span{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--verde2)}
+.modulo-cabeca h3{margin:0;font-family:var(--serif);font-size:24px;color:var(--verde)}
+.modulo-cabeca p{margin:0;flex-basis:100%;color:var(--suave);font-size:15px}
+.aulas{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .aula{display:grid;grid-template-columns:54px 1fr;gap:14px;align-items:start;border:1px solid #c9d6cd;border-radius:10px;padding:18px;background:#fff}
-.aula:before{counter-increment:a;content:counter(a);width:54px;height:54px;border-radius:50%;background:var(--verde);color:var(--ouro);font-family:var(--serif);font-size:24px;display:flex;align-items:center;justify-content:center;border:2px solid var(--ouro2)}
+.aula-num{width:54px;height:54px;border-radius:50%;background:var(--verde);color:var(--ouro);font-family:var(--serif);font-size:22px;display:flex;align-items:center;justify-content:center;border:2px solid var(--ouro2)}
+.aula-data{margin:0 0 2px!important;font-size:12px!important;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--verde2)!important}
 .aula h3{margin:2px 0 4px;font-size:17px;color:var(--verde)}
 .aula p{margin:0;color:#3b4a43;font-size:15px}
+.pratica{display:inline-block;margin-top:8px;font-size:12px;font-weight:700;color:var(--verde2);background:#e3f1e7;border-radius:999px;padding:3px 10px}
+.metodo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:30px}
+.metodo>div,.resultados{border:1px solid #c9d6cd;border-radius:10px;padding:18px;background:#f7f9f5}
+.metodo h3,.resultados h3{margin:0 0 6px;font-family:var(--serif);font-size:20px;color:var(--verde)}
+.metodo p{margin:0;color:#3b4a43}
+.resultados{margin-top:14px}
+.resultados ul{margin:0;padding-left:20px;columns:2;column-gap:32px;color:#3b4a43}
+.resultados li{margin:4px 0;break-inside:avoid}
 .formato{margin-top:22px;color:var(--suave);font-size:15px}
 .publico{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .perfil{border-radius:10px;padding:22px;background:var(--creme);border:1px solid var(--borda)}
@@ -136,7 +150,8 @@ footer a{color:#d6e3da}
   .hero .caixa,.ferramenta,.premios .grade{grid-template-columns:1fr}
   .vitrine{min-height:330px}
   .faixa .caixa{grid-template-columns:1fr 1fr}
-  .aulas,.publico{grid-template-columns:1fr}
+  .aulas,.publico,.metodo{grid-template-columns:1fr}
+  .resultados ul{columns:1}
   .instrutor .caixa{grid-template-columns:1fr;text-align:center}
   .instrutor img{margin:0 auto}
   section{padding:56px 0}
@@ -201,7 +216,7 @@ footer a{color:#d6e3da}
   <div class="caixa">
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9 12h6M12 9v6"/></svg>100% gratuito</div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><path d="M10 9.5v5l4.5-2.5z" fill="currentColor"/></svg>Aulas abertas no YouTube</div>
-    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Vídeos de 10 a 20 minutos</div>
+    <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>16 aulas · quartas e sábados, 10h</div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Certificado de participação</div>
     <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2"/><circle cx="8" cy="11" r="2"/><path d="M13 10h5M13 14h5M5.5 16c.6-1.4 1.5-2 2.5-2s1.9.6 2.5 2"/></svg>Carteirinha de numismata</div>
   </div>
@@ -210,18 +225,64 @@ footer a{color:#d6e3da}
 <section id="aulas">
   <div class="caixa">
     <h2 class="titulo">O que você vai aprender</h2>
-    <p class="sub">Oito aulas com o essencial para colecionar com critério: do primeiro olhar sobre uma moeda até a compra segura e a organização do acervo.</p>
-    <div class="aulas">
-      <article class="aula"><div><h3>O que é numismática</h3><p>Os objetivos de uma coleção e os tipos de coleção que você pode montar.</p></div></article>
-      <article class="aula"><div><h3>Identificar moedas e cédulas</h3><p>País, data, metal e inscrições: o que observar para saber o que você tem nas mãos.</p></div></article>
-      <article class="aula"><div><h3>Conservação, manuseio e armazenamento</h3><p>Como segurar, limpar (ou não limpar!) e guardar suas peças para que durem.</p></div></article>
-      <article class="aula"><div><h3>Valor de uma peça</h3><p>Raridade, estado de conservação, demanda e fontes de consulta. Critérios para entender preços, sem promessas.</p></div></article>
-      <article class="aula"><div><h3>Álbuns, coin holders, etiquetas e bandeiras</h3><p>Os suportes da coleção e como identificá-los para montar um álbum organizado.</p></div></article>
-      <article class="aula"><div><h3>Compra segura e leitura de anúncios</h3><p>Como ler anúncios e lotes, comprar e vender com mais segurança.</p></div></article>
-      <article class="aula"><div><h3>Coleções por país, tema, período ou valor</h3><p>Escolha um caminho para a sua coleção e dê sentido a cada nova peça.</p></div></article>
-      <article class="aula"><div><h3>Catálogos e controle do acervo</h3><p>Como usar catálogos e manter o controle do que você tem e de onde cada peça está guardada.</p></div></article>
+    <p class="sub">16 aulas em 5 módulos, cerca de 6h40 de conteúdo, publicadas no YouTube às quartas e aos sábados, às 10h, de 7 de novembro a 30 de dezembro de 2026. Ministrante: Paulo Machado.</p>
+    <div class="modulo">
+      <div class="modulo-cabeca"><span>Módulo 1</span><h3>Descobrindo a numismática</h3><p>Despertar o interesse, apresentar a história do Mundo Numista e os fundamentos do colecionismo.</p></div>
+      <div class="aulas">
+        <article class="aula"><span class="aula-num" aria-hidden="true">01</span><div><p class="aula-data">Aula 01 · sáb, 07/11 · 10h</p><h3>Bem-vindo ao Mundo Numista</h3><p>História do Mundo Numista; origem dos nomes Numista e Mestre Moedeiro; apresentação de Paulo Machado; objetivos e funcionamento do curso; o prazer de colecionar; apresentação inicial do Mestre Moedeiro Web.</p><span class="pratica">Prática no Mestre Moedeiro Web</span></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">02</span><div><p class="aula-data">Aula 02 · qua, 11/11 · 10h</p><h3>Acumulador, colecionador e numismata</h3><p>Diferenças entre acumular, colecionar e estudar; o prazer da coleção; o colecionismo como atividade cultural; importância do conhecimento, da organização e do ambiente de estudo.</p></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">03</span><div><p class="aula-data">Aula 03 · sáb, 14/11 · 10h</p><h3>O que é numismática?</h3><p>Conceito e história da numismática; moedas; notafilia; medalhística; falerística; escripofilia; relações entre moedas, história, economia e sociedade.</p></div></article>
+      </div>
     </div>
-    <p class="formato">Formato: vídeos curtos, com demonstração prática e uma tarefa simples por aula, feita no Mestre Moedeiro, a ferramenta de apoio do curso.</p>
+    <div class="modulo">
+      <div class="modulo-cabeca"><span>Módulo 2</span><h3>Conhecendo moedas e cédulas</h3><p>Compreender as características físicas das peças, sua fabricação, orientação e conservação.</p></div>
+      <div class="aulas">
+        <article class="aula"><span class="aula-num" aria-hidden="true">04</span><div><p class="aula-data">Aula 04 · qua, 18/11 · 10h</p><h3>Anatomia da moeda, eixos e reversos anômalos</h3><p>Anverso, reverso, campo, orla, bordo, serrilha, legendas, exergo, símbolos, data e valor facial. Eixos vertical e horizontal; alinhamento moeda e medalha; reversos invertidos, horizontais e inclinados; orientação normal × anomalia de cunhagem. Demonstração com moedas reais.</p></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">05</span><div><p class="aula-data">Aula 05 · sáb, 21/11 · 10h</p><h3>Anatomia da cédula</h3><p>Frente e verso; estampas e séries; numeração; assinaturas; marcas-d’água; elementos de segurança; técnicas de impressão; identificação de cédulas brasileiras.</p></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">06</span><div><p class="aula-data">Aula 06 · qua, 25/11 · 10h</p><h3>Metais, materiais e fabricação</h3><p>Ouro, prata, cobre, bronze, latão, níquel, aço e ligas; moedas bimetálicas; casas da moeda; processos de cunhagem; valor facial, metálico e numismático.</p></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">07</span><div><p class="aula-data">Aula 07 · sáb, 28/11 · 10h</p><h3>Estados de conservação</h3><p>BC, MBC, SOB, FC e FE; características das classificações; desgaste; pátina; oxidação; danos; influência da conservação na avaliação comercial.</p></div></article>
+      </div>
+    </div>
+    <div class="modulo">
+      <div class="modulo-cabeca"><span>Módulo 3</span><h3>Ferramentas, preservação e pesquisa</h3><p>Ensinar a estudar, manusear, armazenar e pesquisar peças com segurança.</p></div>
+      <div class="aulas">
+        <article class="aula"><span class="aula-num" aria-hidden="true">08</span><div><p class="aula-data">Aula 08 · qua, 02/12 · 10h</p><h3>Ferramentas do numismata</h3><p>Lupas; balanças de precisão; paquímetros; luvas e manuseio adequado; iluminação; fotografia numismática; instrumentos essenciais e opcionais; organização do espaço de estudo.</p></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">09</span><div><p class="aula-data">Aula 09 · sáb, 05/12 · 10h</p><h3>Armazenamento e preservação</h3><p>Coin holders; cápsulas; envelopes; álbuns; bandejas; folhas para moedas; materiais adequados; umidade; temperatura; riscos de limpeza e polimento; preservação da originalidade.</p></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">10</span><div><p class="aula-data">Aula 10 · qua, 09/12 · 10h</p><h3>Catálogos e pesquisa numismática</h3><p>Catálogos brasileiros e internacionais; fontes digitais; pesquisa no Numista; identificação por país, período, tipo e ano; tiragens; variantes; referências e valores catalogados.</p><span class="pratica">Prática no Mestre Moedeiro Web</span></div></article>
+      </div>
+    </div>
+    <div class="modulo">
+      <div class="modulo-cabeca"><span>Módulo 4</span><h3>Construindo uma coleção</h3><p>Apresentar vertentes do colecionismo, organização e fundamentos do mercado.</p></div>
+      <div class="aulas">
+        <article class="aula"><span class="aula-num" aria-hidden="true">11</span><div><p class="aula-data">Aula 11 · sáb, 12/12 · 10h</p><h3>As vertentes do colecionismo</h3><p>Coleções por país, período, metal, valor facial e tema; moedas brasileiras e estrangeiras; séries comemorativas; cédulas; variantes; erros de cunhagem; escolha do foco da coleção.</p></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">12</span><div><p class="aula-data">Aula 12 · qua, 16/12 · 10h</p><h3>Organização e catalogação</h3><p>Identificação e numeração das peças; fichas técnicas; registros de aquisição e procedência; fotografias; controle de repetidas e faltantes; organização física e digital; uso do Mestre Moedeiro Web.</p><span class="pratica">Prática no Mestre Moedeiro Web</span></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">13</span><div><p class="aula-data">Aula 13 · sáb, 19/12 · 10h</p><h3>Raridade, mercado e investimento</h3><p>Antiguidade × raridade; tiragem e sobrevivência; demanda; formação de preços; leilões; compra e venda; falsificações; erros de cunhagem e reversos anômalos no mercado; coleção como investimento e riscos.</p></div></article>
+      </div>
+    </div>
+    <div class="modulo">
+      <div class="modulo-cabeca"><span>Módulo 5</span><h3>Cultura numismática e conclusão</h3><p>Ampliar o interesse histórico e consolidar o aprendizado com prática.</p></div>
+      <div class="aulas">
+        <article class="aula"><span class="aula-num" aria-hidden="true">14</span><div><p class="aula-data">Aula 14 · qua, 23/12 · 10h</p><h3>Curiosidades e história monetária</h3><p>Origem e evolução do dinheiro; origem do cifrão; corporações dos moedeiros; casas da moeda; curiosidades históricas; moedas que marcaram épocas e acontecimentos.</p></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">15</span><div><p class="aula-data">Aula 15 · sáb, 26/12 · 10h</p><h3>Oficina prática: minha primeira coleção organizada</h3><p>Seleção de peças; identificação; pesquisa em catálogos; medição; fotografias; classificação; acondicionamento; cadastro e organização no Mestre Moedeiro Web.</p><span class="pratica">Prática no Mestre Moedeiro Web</span></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">16</span><div><p class="aula-data">Aula 16 · qua, 30/12 · 10h</p><h3>Revisão, avaliação e encerramento</h3><p>Revisão dos conceitos; avaliação final; projeto de coleção; continuidade dos estudos; comunidade Mundo Numista; critérios para a Carteirinha de Numismata; apresentação de futuros cursos.</p></div></article>
+      </div>
+    </div>
+    <div class="metodo">
+      <div><h3>Como são as aulas</h3><p>Cada aula começa com uma curiosidade histórica, explica o tema de forma acessível, demonstra com peças e ferramentas reais, propõe um exercício prático e antecipa a próxima aula.</p></div>
+      <div><h3>Seu projeto ao longo do curso</h3><p>Escolha cinco moedas ou cédulas da sua coleção e, aula a aula, identifique, pesquise, fotografe, conserve e catalogue cada uma, usando o Mestre Moedeiro Web, a ferramenta de apoio do curso.</p></div>
+    </div>
+    <div class="resultados">
+      <h3>Ao concluir o curso, você vai saber</h3>
+      <ul>
+        <li>reconhecer os conceitos e as áreas da numismática;</li>
+        <li>identificar as características de moedas e cédulas;</li>
+        <li>distinguir alinhamentos normais de possíveis anomalias de cunhagem;</li>
+        <li>usar ferramentas e catálogos;</li>
+        <li>conservar e preservar as suas peças;</li>
+        <li>pesquisar valores com senso crítico;</li>
+        <li>organizar uma pequena coleção.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -246,7 +307,7 @@ footer a{color:#d6e3da}
       <div class="premio"><h3>Carteirinha de numismata</h3><p>A <b>Carteirinha de Numismata</b> do Curso Básico de Numismática Mundo Numista, com a sua foto, o seu nome, número de registro, a data de conclusão e a assinatura do ministrante.</p></div>
     </div>
     <img class="carteirinha-grande" src="imagens/carteirinha_numismata.webp" alt="Carteirinha de Numismata do Curso Básico de Numismática Mundo Numista: foto, nome do colecionador, registro, data de conclusão e assinatura de Paulo Machado, ministrante do curso" width="1200" height="782">
-    <p class="aviso">Como receber o certificado e a carteirinha será explicado na aula inaugural.</p>
+    <p class="aviso">Os critérios para receber o certificado e a carteirinha são apresentados no curso e detalhados na Aula 16. A carteirinha representa a participação no curso e não é uma habilitação profissional oficial.</p>
   </div>
 </section>
 
@@ -300,8 +361,8 @@ footer a{color:#d6e3da}
       <details><summary>Preciso entrar em algum grupo?</summary><p>Não. Os grupos do Mundo Numista são opcionais: participa quem quiser, quando quiser.</p></details>
       <details><summary>Preciso comprar moedas?</summary><p>Não. Você aprende com as peças que já tem, ou com nenhuma. Nada no curso depende de compra.</p></details>
       <details><summary>Posso assistir sem cadastro?</summary><p>Sim. As aulas ficam abertas no YouTube, para qualquer pessoa assistir.</p></details>
-      <details><summary>Quando o curso começa?</summary><p>O lançamento é no sábado, 7 de novembro de 2026, às 10h (horário de Brasília), no YouTube do Mundo Numista. Toque em "Quero ser avisado" para acompanhar e não perder o início.</p></details>
-      <details><summary>Como recebo o certificado e a carteirinha?</summary><p>As regras para receber o certificado de participação e a carteirinha de numismata serão apresentadas na aula inaugural.</p></details>
+      <details><summary>Quando o curso começa?</summary><p>A primeira aula é no sábado, 7 de novembro de 2026, às 10h (horário de Brasília), no YouTube do Mundo Numista. Depois, aulas novas toda quarta e todo sábado, às 10h, até 30 de dezembro: 16 aulas no total.</p></details>
+      <details><summary>Como recebo o certificado e a carteirinha?</summary><p>Os critérios de conclusão são apresentados no curso e detalhados na Aula 16 (revisão, avaliação e encerramento). A carteirinha representa a participação no curso e não é uma habilitação profissional oficial.</p></details>
       <details><summary>O que é o Mestre Moedeiro?</summary><p>É a ferramenta de apoio do curso, gratuita: nela você faz as tarefas práticas das aulas com a sua própria coleção. Funciona no navegador do computador e do celular.</p></details>
       <details><summary>O curso vai me dizer quanto valem as minhas moedas?</summary><p>O curso ensina os critérios que formam o valor de uma peça (raridade, estado de conservação, demanda) e onde consultar. Não fazemos avaliação automática nem prometemos valorização.</p></details>
     </div>
