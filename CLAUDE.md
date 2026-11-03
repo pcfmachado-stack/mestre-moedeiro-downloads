@@ -17,3 +17,5 @@ Documentação central e regras do projeto: repositório
 - `stack.yml` espelha o Portainer em 01/11/2026 (sem segredos); a configuração real está no Portainer.
 - Home do projeto (02/11/2026): `site/inicio.html`, aberta em `/` só nos domínios mestremoedeiro.com.br e www
   (`map $host` no nginx.conf). `downloads.mundonumista.com.br/` continua sendo a página do Windows (`index.html`).
+- Curso (02/11/2026): `site/curso.html` em `cursos.mundonumista.com.br` (mesmo `map $host`; Traefik e DNS com o
+  nome novo). Data do lançamento: atributo `data-lancamento` no `<body>`; redes vêm de `/comunicacao/redes_sociais.json`.

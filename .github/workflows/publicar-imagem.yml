@@ -22,6 +22,8 @@ jobs:
         run: |
           test -s site/index.html
           test -s site/inicio.html
+          test -s site/curso.html
+          grep -q 'cursos.mundonumista.com.br /curso.html;' nginx.conf
           grep -q 'https://app.mestremoedeiro.com.br' site/inicio.html
           grep -q 'mestremoedeiro.com.br      /inicio.html;' nginx.conf
           test -s nginx.conf
