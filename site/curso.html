@@ -66,13 +66,7 @@ a{color:var(--verde2)}
 .certificado b{display:block;font-family:var(--serif);font-size:22px;color:var(--verde);margin:6px 0}
 .certificado p{margin:4px 0;font-size:12px}
 .certificado .linha-assin{width:46%;margin:18px auto 0;border-top:1px solid #b9ad90;padding-top:4px;font-size:10px;color:#6b5a35}
-.cartao-num{position:absolute;left:0;bottom:0;width:66%;aspect-ratio:1.586/1;border-radius:14px;background:linear-gradient(135deg,#1b5a43,#0e2a21 70%);border:1px solid rgba(232,197,114,.6);box-shadow:0 22px 44px rgba(0,0,0,.45);padding:16px 18px;color:#fff;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;align-content:space-between;transform:rotate(-4deg)}
-.cartao-num img{width:66px;height:66px;border-radius:50%;grid-row:span 2}
-.cartao-num .t{font-family:var(--serif);font-size:17px;letter-spacing:1.5px;color:var(--ouro);align-self:end}
-.cartao-num .s{font-size:10px;letter-spacing:2px;color:#d6e3da;align-self:start}
-.cartao-num .dados{grid-column:1/-1;display:flex;justify-content:space-between;gap:10px;font-size:11px;color:#d6e3da;border-top:1px solid rgba(232,197,114,.35);padding-top:8px}
-.cartao-num .dados b{display:block;color:#fff;font-size:13px;letter-spacing:.5px}
-.chip{width:34px;height:26px;border-radius:5px;background:linear-gradient(135deg,#f0d28b,#b9993f);position:absolute;right:18px;top:18px}
+.carteirinha{position:absolute;left:0;bottom:0;width:76%;height:auto;border-radius:16px;box-shadow:0 22px 44px rgba(0,0,0,.45);transform:rotate(-4deg)}
 /* faixa */
 .faixa{background:var(--pergaminho);border-bottom:1px solid var(--borda)}
 .faixa .caixa{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding-top:22px;padding-bottom:22px}
@@ -100,6 +94,7 @@ section{padding:72px 0}
 .premio{border:1px solid rgba(232,197,114,.4);border-radius:12px;padding:24px;background:rgba(255,255,255,.04)}
 .premio h3{margin:0 0 8px;font-family:var(--serif);color:var(--ouro);font-size:24px}
 .premio p{margin:0;color:#d6e3da}
+.carteirinha-grande{display:block;width:100%;max-width:640px;height:auto;margin:26px auto 0;border-radius:16px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
 .premios .aviso{margin-top:20px;font-size:14px;color:#b9cdc1}
 .ferramenta{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
 .ferramenta ul{margin:0 0 24px;padding-left:20px;color:#3b4a43}
@@ -137,10 +132,7 @@ footer a{color:#d6e3da}
   .topo .botao.ouro{padding:8px 12px;font-size:13px;margin-left:auto}
   .certificado{width:90%;padding:20px 16px}
   .certificado b{font-size:17px}
-  .cartao-num{width:84%;padding:12px 14px}
-  .cartao-num img{width:52px;height:52px}
-  .cartao-num .t{font-size:14px}
-  .chip{width:26px;height:20px;right:12px;top:12px}
+  .carteirinha{width:86%}
   .hero .caixa,.ferramenta,.premios .grade{grid-template-columns:1fr}
   .vitrine{min-height:330px}
   .faixa .caixa{grid-template-columns:1fr 1fr}
@@ -191,8 +183,8 @@ footer a{color:#d6e3da}
       </div>
       <p class="nota">Sem pagar nada, sem precisar comprar moedas e sem obrigação de entrar em grupos.</p>
     </div>
-    <div class="vitrine" aria-hidden="true">
-      <div class="certificado">
+    <div class="vitrine">
+      <div class="certificado" aria-hidden="true">
         <small>MUNDO NUMISTA® · CURSO BÁSICO DE NUMISMÁTICA</small>
         <b>Certificado de Participação</b>
         <p>Certificamos que</p>
@@ -200,13 +192,7 @@ footer a{color:#d6e3da}
         <p>participou do Curso Básico de Numismática</p>
         <div class="linha-assin">Mundo Numista®</div>
       </div>
-      <div class="cartao-num">
-        <img src="imagens/marca_mundo_numista_256.webp" alt="">
-        <span class="t">NUMISMATA</span>
-        <span class="s">MUNDO NUMISTA®</span>
-        <div class="dados"><span>Nome<b>SEU NOME AQUI</b></span><span>Membro desde<b>2026</b></span></div>
-        <i class="chip"></i>
-      </div>
+      <img class="carteirinha" src="imagens/carteirinha_numismata.webp" alt="Modelo da carteirinha de Numismata Afiliado Mundo Numista" width="1000" height="667">
     </div>
   </div>
 </div>
@@ -257,8 +243,9 @@ footer a{color:#d6e3da}
     <p class="sub">Quem participar do curso recebe o reconhecimento do Mundo Numista.</p>
     <div class="grade">
       <div class="premio"><h3>Certificado de participação</h3><p>Um certificado do Mundo Numista registrando a sua participação no Curso Básico de Numismática.</p></div>
-      <div class="premio"><h3>Carteirinha de numismata</h3><p>A sua carteirinha de Numismata Mundo Numista, com o seu nome: o primeiro passo como colecionador reconhecido pela comunidade.</p></div>
+      <div class="premio"><h3>Carteirinha de numismata</h3><p>A carteirinha de <b>Numismata Afiliado</b> Mundo Numista, com o seu nome, número de registro e a categoria "Participante do Curso Básico de Numismática".</p></div>
     </div>
+    <img class="carteirinha-grande" src="imagens/carteirinha_numismata.webp" alt="Carteirinha de Numismata Afiliado Mundo Numista: nome, registro, categoria Participante do Curso Básico de Numismática e data de emissão" width="1000" height="667">
     <p class="aviso">Como receber o certificado e a carteirinha será explicado na aula inaugural.</p>
   </div>
 </section>
