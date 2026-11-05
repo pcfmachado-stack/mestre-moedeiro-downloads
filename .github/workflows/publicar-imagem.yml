@@ -20,7 +20,7 @@ jobs:
 
       - name: Validar arquivos essenciais
         run: |
-          test -s site/index.html
+          test ! -e site/index.html   # D52: sem página do programa para Windows
           test -s site/inicio.html
           test -s site/curso.html
           grep -q 'cursos.mundonumista.com.br /curso.html;' nginx.conf
@@ -28,17 +28,15 @@ jobs:
           grep -q 'mestremoedeiro.com.br      /inicio.html;' nginx.conf
           test -s nginx.conf
           test -s Dockerfile
-          grep -q 'alias /data/site/versao.json;' nginx.conf
-          grep -q 'alias /data/site/arquivos/;' nginx.conf
+          ! grep -q 'alias /data/site/versao.json;' nginx.conf
+          ! grep -q 'alias /data/site/arquivos/;' nginx.conf
+          grep -q 'return 301 https://mestremoedeiro.com.br/' nginx.conf
+          ! grep -q 'downloads.mundonumista.com.br' site/inicio.html site/curso.html
           grep -q 'alias /data/site/comunicacao/;' nginx.conf
           grep -q 'alias /data/site/termos/;' nginx.conf
           ! grep -q 'proxy_pass' nginx.conf
           ! grep -q '/usr/share/nginx/html:ro' stack.yml
 
-      - name: Verificar textos da pagina (ativacao por WhatsApp)
-        run: |
-          ! grep -qi 'Ative por e-mail' site/index.html
-          ! grep -qi 'Informe seu e-mail' site/tutoriais/instalacao.html
       - name: Validar a configuração do Nginx
         run: docker run --rm -v "$PWD/nginx.conf:/etc/nginx/conf.d/default.conf:ro" nginx:1.27-alpine nginx -t
       # Em pull requests apenas valida; a imagem so e publicada no main.
