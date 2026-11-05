@@ -1,7 +1,8 @@
 # Mestre Moedeiro — Downloads (servidor público)
 
 Documentação central e regras do projeto: repositório
-`pcfmachado-stack/mestre-moedeiro-desktop` → `CLAUDE.md` e `docs/`
+`pcfmachado-stack/mestre-moedeiro-web` → `CLAUDE.md` e `docs/` (desde 05/11/2026, D52: o Desktop foi
+descontinuado e o repositório `mestre-moedeiro-desktop` está arquivado)
 (especialmente `docs/CONTRATOS.md`). Leia antes de alterar.
 
 - Papel: DISTRIBUI. Nginx serve a página (`site/`, embutida na imagem) e, do
