@@ -54,7 +54,7 @@ a{color:var(--verde2)}
 .nota{font-size:14px;color:var(--suave);margin-top:16px}
 .nota b{color:var(--verde)}
 .palco{position:relative;min-height:440px}
-.moeda{position:absolute;right:-18px;top:-46px;width:200px;filter:drop-shadow(0 10px 18px rgba(80,60,20,.25));z-index:2}
+.moeda{position:absolute;right:-18px;top:-56px;width:230px;height:auto;filter:drop-shadow(0 10px 18px rgba(80,60,20,.25));z-index:2}
 .tela{position:absolute;left:0;bottom:0;width:92%;background:#fff;border:1px solid #c9d6cd;border-radius:10px;box-shadow:0 18px 40px rgba(20,60,48,.18);overflow:hidden;font-size:12px}
 .tela .barra{background:var(--verde);color:#e9f1ec;display:flex;gap:14px;padding:9px 12px;align-items:center}
 .tela .barra b{color:var(--ouro);border-bottom:2px solid var(--ouro);padding-bottom:2px}
@@ -166,18 +166,7 @@ footer a{color:#d6e3da}
       <p class="nota">Entre com o seu <b>celular</b>: um código chega pelo WhatsApp e você cria sua senha. <b>Sem custo, sem cartão.</b></p>
     </div>
     <div class="palco" aria-hidden="true">
-      <svg class="moeda" viewBox="0 0 240 240" role="img">
-        <defs>
-          <radialGradient id="ouro" cx="38%" cy="32%" r="75%"><stop offset="0" stop-color="#fbe7a6"/><stop offset=".55" stop-color="#d9b25a"/><stop offset="1" stop-color="#9c7a2e"/></radialGradient>
-          <path id="arco" d="M120,120 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/>
-        </defs>
-        <circle cx="120" cy="120" r="116" fill="url(#ouro)" stroke="#8a6a25" stroke-width="3"/>
-        <circle cx="120" cy="120" r="104" fill="none" stroke="#8a6a25" stroke-width="2" stroke-dasharray="2 5"/>
-        <circle cx="120" cy="120" r="68" fill="none" stroke="#8a6a25" stroke-width="1.6"/>
-        <text font-family="Georgia,serif" font-size="15" letter-spacing="4" fill="#5b4416" font-weight="700"><textPath href="#arco" startOffset="3%">MESTRE ✦ MOEDEIRO ✦ MESTRE ✦ MOEDEIRO ✦</textPath></text>
-        <text x="120" y="135" text-anchor="middle" font-family="Georgia,serif" font-size="46" font-weight="700" fill="#5b4416">MM</text>
-        <text x="120" y="160" text-anchor="middle" font-family="Georgia,serif" font-size="12" letter-spacing="3" fill="#5b4416">COLEÇÃO</text>
-      </svg>
+      <img class="moeda" src="/imagens/moeda_mestre_moedeiro.webp" width="398" height="398" alt="Moeda dourada no estilo do Império com o brasão coroado entre ramos de louro e a inscrição Mestre Moedeiro · Coleção">
       <div class="tela">
         <div class="barra"><i></i><span>INÍCIO</span><b>CATÁLOGOS</b><span>MINHA COLEÇÃO</span><span>FERRAMENTAS</span></div>
         <div class="cab"><small>CATÁLOGO · CONSULTA</small><strong>Moedas do Brasil</strong></div>
