@@ -20,4 +20,4 @@ Documentação central e regras do projeto: repositório
 - Curso (02/11/2026): `site/curso.html` em `cursos.mundonumista.com.br` (mesmo `map $host`; Traefik e DNS com o
   nome novo). Data do lançamento: atributo `data-lancamento` no `<body>`; redes vêm de `/comunicacao/redes_sociais.json`.
 - QR das bandeiras (D48, 04/11/2026): `/e/<id>` redireciona (302) para `app.mestremoedeiro.com.br/e/<id>`.
-  O endereço está impresso nas bandeiras — nunca remover.
+  O endereço está impresso nas bandeiras — nunca remover. Idem `/c/<bt>` (Cédulas do Brasil, D51, 05/11/2026).
