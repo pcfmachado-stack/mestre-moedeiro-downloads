@@ -409,7 +409,7 @@ footer a{color:#d6e3da}
   // Redes do Mundo Numista: as mesmas publicadas pelo painel Uploads (comunicacao/redes_sociais.json).
   // "Quero ser avisado" leva ao YouTube (onde o curso estará); sem YouTube, ao Instagram ou Facebook.
   fetch('/comunicacao/redes_sociais.json', { cache: 'no-store' }).then(function (r) { return r.json() }).then(function (d) {
-    var base = 'https://downloads.mundonumista.com.br';
+    var base = 'https://mestremoedeiro.com.br';
     ['youtube', 'instagram', 'facebook', 'site'].forEach(function (k) {
       var url = (d[k] || '').trim();
       var a = document.querySelector('[data-rede="' + k + '"]');
