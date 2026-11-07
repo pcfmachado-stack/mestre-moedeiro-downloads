@@ -11,7 +11,7 @@ descontinuado e o repositório `mestre-moedeiro-desktop` está arquivado)
 - D52 (05/11/2026, Desktop descontinuado): sem página do programa para Windows, sem `/arquivos/` e sem
   `/versao.json`. `downloads.mundonumista.com.br/` redireciona (301) para `mestremoedeiro.com.br`; o domínio
   pode sair do Traefik/DNS depois que web, licenciamento e Uploads lerem `mestremoedeiro.com.br`.
-- Imagem: a cada push no `main`, tags `<versão>` e `sha-<commit>`; em PRs o
+- Imagem: a cada push no `main`, tags `<versão>` e `sha-<commit completo>`; em PRs o
   workflow só valida. Mudou a página? Atualize o serviço `mm-downloads-web`.
 - Domínios (Traefik): `mestremoedeiro.com.br` e `www.mestremoedeiro.com.br` (página pública do produto),
   `cursos.mundonumista.com.br` (curso) e, até ser desligado, `downloads.mundonumista.com.br` (só redireciona).
