@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Curso Básico de Numismática gratuito — Mundo Numista®</title>
-<meta name="description" content="Curso Básico de Numismática gratuito do Mundo Numista, no YouTube. Aprenda a identificar, conservar e organizar moedas e cédulas. Certificado de participação e carteirinha de numismata. Lançamento sábado, 7 de novembro, às 16h.">
+<meta name="description" content="Curso Básico de Numismática gratuito do Mundo Numista, no YouTube. Aprenda a identificar, conservar e organizar moedas e cédulas. Certificado de participação e carteirinha de numismata. A Aula 01 já está no ar no canal do Mundo Numista no YouTube.">
 <link rel="canonical" href="https://cursos.mundonumista.com.br/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Mundo Numista®">
 <meta property="og:url" content="https://cursos.mundonumista.com.br/">
 <meta property="og:title" content="Curso Básico de Numismática gratuito — Mundo Numista®">
-<meta property="og:description" content="Sua coleção começa com conhecimento. Curso gratuito no YouTube, com certificado e carteirinha de numismata. Lançamento sábado, 7/11, às 16h.">
+<meta property="og:description" content="Sua coleção começa com conhecimento. Curso gratuito no YouTube, com certificado e carteirinha de numismata. A Aula 01 já está no ar: assista no YouTube.">
 <meta property="og:image" content="https://cursos.mundonumista.com.br/imagens/logo_mundo_numista.webp">
 <meta name="theme-color" content="#143c30">
 <link rel="icon" type="image/png" href="imagens/marca_mundo_numista_64.png">
@@ -45,6 +45,10 @@ a{color:var(--verde2)}
 /* hero */
 .hero{background:radial-gradient(900px 480px at 80% 30%,#1f5b45 0,transparent 65%),linear-gradient(160deg,var(--verde),var(--escuro));color:#fff}
 .hero .caixa{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;padding-top:60px;padding-bottom:70px}
+.video{position:relative;aspect-ratio:16/9;width:100%;border-radius:10px;overflow:hidden;border:2px solid var(--ouro2);box-shadow:6px 6px 0 var(--ouro3);background:#000;align-self:center}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.convite{margin:8px 0 0;line-height:1.5}
+.aula-data a{color:inherit;font-weight:700}
 .kicker{display:inline-flex;gap:10px;align-items:center;font-size:12px;font-weight:700;letter-spacing:1.6px;color:var(--ouro);border:1px solid rgba(232,197,114,.5);border-radius:999px;padding:6px 14px}
 .kicker i{width:8px;height:8px;border-radius:50%;background:var(--ouro);box-shadow:0 0 0 4px rgba(232,197,114,.25)}
 .hero h1{font-family:var(--serif);font-size:clamp(36px,5.2vw,60px);line-height:1.06;margin:20px 0 16px;font-weight:700}
@@ -161,7 +165,7 @@ footer a{color:#d6e3da}
 </head>
 <!-- DATA DO LANÇAMENTO: quando for anunciada, preencha data-lancamento no formato
      2026-11-20T20:00:00-03:00 (data, hora e fuso de Brasília). Vazio = "será anunciada em breve". -->
-<body data-lancamento="2026-11-07T16:00:00-03:00">
+<body data-lancamento="">
 
 <header class="topo">
   <div class="caixa">
@@ -172,7 +176,7 @@ footer a{color:#d6e3da}
       <a href="#ferramenta">Ferramenta de apoio</a>
       <a href="#duvidas">Dúvidas</a>
     </nav>
-    <a class="botao ouro" data-aviso href="https://mundonumista.com.br">Quero ser avisado</a>
+    <a class="botao ouro" href="https://youtu.be/dJV7dA-7yOo" target="_blank" rel="noopener">Assistir à Aula 01</a>
   </div>
 </header>
 
@@ -180,12 +184,13 @@ footer a{color:#d6e3da}
 <div class="hero">
   <div class="caixa">
     <div>
-      <span class="kicker"><i></i>CURSO GRATUITO · LANÇAMENTO 07/11, SÁBADO, 10H</span>
+      <span class="kicker"><i></i>CURSO GRATUITO · A AULA 01 JÁ ESTÁ NO AR</span>
       <h1>Sua coleção começa com <em>conhecimento.</em></h1>
       <p class="lead">O Curso Básico de Numismática do Mundo Numista é gratuito e aberto no YouTube. Aprenda a identificar, conservar e organizar moedas e cédulas, e receba certificado de participação e a sua carteirinha de numismata.</p>
       <div class="data" aria-live="polite">
-        <small>LANÇAMENTO</small>
-        <strong id="data-texto">Sábado, 7 de novembro · 16:00 (Brasília)</strong>
+        <small>AULA 01 · NO AR NO NOSSO CANAL</small>
+        <strong id="data-texto">Bem-vindo ao Mundo Numista</strong>
+        <p class="convite">Internautas, colecionadores e numismatas: a primeira aula já está no canal do Mundo Numista no YouTube. Assista, deixe o seu comentário e venha participar com a gente!</p>
         <div class="contagem oculto" id="contagem">
           <div><b id="c-dias">0</b><span>dias</span></div>
           <div><b id="c-horas">0</b><span>horas</span></div>
@@ -193,12 +198,15 @@ footer a{color:#d6e3da}
         </div>
       </div>
       <div class="acoes">
-        <a class="botao grande" data-aviso href="https://mundonumista.com.br">Quero ser avisado do lançamento</a>
+        <a class="botao grande" href="https://youtu.be/dJV7dA-7yOo" target="_blank" rel="noopener">▶ Assistir à Aula 01 no YouTube</a>
         <a class="botao contorno" href="#aulas">Ver o que vou aprender</a>
       </div>
       <p class="nota">Sem pagar nada, sem precisar comprar moedas e sem obrigação de entrar em grupos.</p>
     </div>
-    <div class="vitrine">
+    <div class="video">
+      <iframe src="https://www.youtube-nocookie.com/embed/dJV7dA-7yOo" title="Aula 01 · Bem-vindo ao Mundo Numista — Curso Básico de Numismática" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <div class="vitrine oculto">
       <div class="certificado" aria-hidden="true">
         <small>MUNDO NUMISTA® · CURSO BÁSICO DE NUMISMÁTICA</small>
         <b>Certificado de Participação</b>
@@ -229,7 +237,7 @@ footer a{color:#d6e3da}
     <div class="modulo">
       <div class="modulo-cabeca"><span>Módulo 1</span><h3>Descobrindo a numismática</h3><p>Despertar o interesse, apresentar a história do Mundo Numista e os fundamentos do colecionismo.</p></div>
       <div class="aulas">
-        <article class="aula"><span class="aula-num" aria-hidden="true">01</span><div><p class="aula-data">Aula 01 · sáb, 07/11 · 16h</p><h3>Bem-vindo ao Mundo Numista</h3><p>História do Mundo Numista; origem dos nomes Numista e Mestre Moedeiro; apresentação de Paulo Machado; objetivos e funcionamento do curso; o prazer de colecionar; apresentação inicial do Mestre Moedeiro Web.</p><span class="pratica">Prática no Mestre Moedeiro Web</span></div></article>
+        <article class="aula"><span class="aula-num" aria-hidden="true">01</span><div><p class="aula-data">Aula 01 · sáb, 07/11 · <a href="https://youtu.be/dJV7dA-7yOo" target="_blank" rel="noopener">no ar · assistir no YouTube</a></p><h3>Bem-vindo ao Mundo Numista</h3><p>História do Mundo Numista; origem dos nomes Numista e Mestre Moedeiro; apresentação de Paulo Machado; objetivos e funcionamento do curso; o prazer de colecionar; apresentação inicial do Mestre Moedeiro Web.</p><span class="pratica">Prática no Mestre Moedeiro Web</span></div></article>
         <article class="aula"><span class="aula-num" aria-hidden="true">02</span><div><p class="aula-data">Aula 02 · qua, 11/11 · 10h</p><h3>Acumulador, colecionador e numismata</h3><p>Diferenças entre acumular, colecionar e estudar; o prazer da coleção; o colecionismo como atividade cultural; importância do conhecimento, da organização e do ambiente de estudo.</p></div></article>
         <article class="aula"><span class="aula-num" aria-hidden="true">03</span><div><p class="aula-data">Aula 03 · sáb, 14/11 · 10h</p><h3>O que é numismática?</h3><p>Conceito e história da numismática; moedas; notafilia; medalhística; falerística; escripofilia; relações entre moedas, história, economia e sociedade.</p></div></article>
       </div>
@@ -373,8 +381,8 @@ footer a{color:#d6e3da}
   <div class="caixa">
     <img src="imagens/marca_mundo_numista_256.webp" alt="" width="110" height="110">
     <h2 class="titulo">Aprenda a colecionar com conhecimento</h2>
-    <p>Curso gratuito, certificado de participação e carteirinha de numismata. Seja avisado do lançamento.</p>
-    <a class="botao grande" data-aviso href="https://mundonumista.com.br">Quero ser avisado do lançamento</a>
+    <p>Curso gratuito, certificado de participação e carteirinha de numismata. A Aula 01 já está no ar: assista e inscreva-se no canal para acompanhar as próximas.</p>
+    <a class="botao grande" href="https://youtu.be/dJV7dA-7yOo" target="_blank" rel="noopener">▶ Assistir à Aula 01 no YouTube</a>
   </div>
 </section>
 </main>
