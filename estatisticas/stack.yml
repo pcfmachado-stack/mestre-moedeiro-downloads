@@ -1,8 +1,10 @@
 version: '3.8'
 # Estatísticas de visitas (Umami, D54) — stack "estatisticas" no Portainer.
-# Segredos SÓ nas variáveis de ambiente da stack no Portainer (nunca neste arquivo):
-#   UMAMI_DB_SENHA   senha do PostgreSQL do Umami (letras e números, sem @ : / ?)
-#   UMAMI_APP_SECRET texto aleatório longo (ex.: 64 letras/números)
+# COLE ESTE ARQUIVO SEM ALTERAR NADA. Os ${...} abaixo são NOMES de variáveis, não lugar para a senha.
+# Antes do Deploy, abaixo do editor, em "Environment variables" › "Add an environment variable", CRIE as duas:
+#   name UMAMI_DB_SENHA    value: senha do banco (só letras e números, ~24)
+#   name UMAMI_APP_SECRET  value: texto aleatório (só letras e números, ~64)
+# Sem elas o banco falha com "superuser password is not specified" (E33).
 services:
   umami:
     image: ghcr.io/umami-software/umami:latest

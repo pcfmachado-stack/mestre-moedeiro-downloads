@@ -8,8 +8,12 @@ Painel: `https://estatisticas.mundonumista.com.br` (DNS: registro A para o IP do
 
 ## Implantar (responsável)
 1. DNS: criar `estatisticas.mundonumista.com.br` apontando para o servidor.
-2. Portainer › Stacks › Add stack, nome `estatisticas`, colar `stack.yml` e, em **Environment variables**:
-   `UMAMI_DB_SENHA` e `UMAMI_APP_SECRET` (gerar; guardar no LastPass). Deploy.
+2. Portainer › Stacks › Add stack, nome `estatisticas`, colar `stack.yml` **sem alterar nada** (os `${...}` são
+   nomes de variáveis). Abaixo do editor, em **Environment variables**, clicar duas vezes em
+   **Add an environment variable** e CRIAR: `UMAMI_DB_SENHA` (senha do banco) e `UMAMI_APP_SECRET` (texto longo),
+   valores só com letras e números, gerados e guardados no LastPass. Só então **Deploy the stack**.
+   Variável faltando = banco em "failed" com "superuser password is not specified": apagar a stack e o volume
+   `estatisticas_umami_db` (vazio) e refazer.
 3. Abrir o painel e entrar com **admin / umami** — **trocar a senha na hora** (Settings › Profile) e
    guardar no LastPass.
 4. Settings › Websites › **Add website**: nome `Curso Mundo Numista`, domínio `cursos.mundonumista.com.br`.
