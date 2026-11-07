@@ -32,6 +32,8 @@ jobs:
           ! grep -q 'alias /data/site/arquivos/;' nginx.conf
           grep -q 'return 301 https://mestremoedeiro.com.br/' nginx.conf
           ! grep -q 'downloads.mundonumista.com.br' site/inicio.html site/curso.html
+          grep -q 'data-website-id="f7ede37b-9c39-4a94-84a3-162f62e36de9"' site/curso.html   # D54 Umami
+          grep -q 'data-website-id="2970bb4b-a67b-4f6b-90f2-838a3a6cff02"' site/inicio.html
           grep -q 'alias /data/site/comunicacao/;' nginx.conf
           grep -q 'alias /data/site/termos/;' nginx.conf
           ! grep -q 'proxy_pass' nginx.conf
